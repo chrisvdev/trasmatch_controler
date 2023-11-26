@@ -20,22 +20,27 @@ void setup() {
 }
 
 void reset(){
+  digitalWrite(LED_BUILTIN,HIGH);
   Serial.write(0xFF3CEFFF);
+  digitalWrite(LED_BUILTIN,LOW);
 }
 
 void thru() {
+  digitalWrite(LED_BUILTIN,HIGH);
   Serial.write(0xFF5DFFFF);
   Serial.write(0x5DFFFF6D);
   Serial.write(0xFFFF);
+  digitalWrite(LED_BUILTIN,LOW);
 }
 
 void start(){
+  digitalWrite(LED_BUILTIN,HIGH);
   Serial.write(0xFF5EEFFF);
   Serial.write(0x5EEFFFEF);
   Serial.write(0xFF);
   delay(WAIT);
   Serial.write(0x6EFFFF);
-
+  digitalWrite(LED_BUILTIN,LOW);
 }
 
 void loop() {
